@@ -12,7 +12,7 @@
         <h1>E-Commerce </h1>
         <input type="text" placeholder="Enter product name..">
         <div class="buttons">
-        <button> <img src="./assets/cart.ico"> </button>
+        <button id="cart-btn"> <img src="./assets/cart.ico"> </button>
         <button>Sing Up</button>
         <button>Sing In</button>
         </div>
@@ -27,19 +27,24 @@
         <section class="product-wrapper">
             <h1>Products</h1>
             <div class="product-list">
-                <div class="card">
-                    <img src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg" >
-                    <p>Mens Cotton Jacket</p>
-                    <p>men's clothing</p>
-                    <div class="card-footer">
-                        <span>300 $</span>
-                        <button>Add a Cart</button>
-                    </div>
-                
-                </div>
-
+            
             </div>
         </section>
+
+        <div id="modal-wrapper">
+            <div class="modal">
+                <img id="close-btn" src="./assets/close.png" >
+                <h1 class="modal-title">Shopping Cart</h1>
+                <div class="modal-list">
+                    <div class="item">
+                        <img src="https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg" alt="">
+                        <h2 class="title">White Gold Plated Princess</h2>
+                        <h2 class="price">100 $</h2>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
     </main>
     <script src="main.js"></script>
 </body>
