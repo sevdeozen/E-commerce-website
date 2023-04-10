@@ -3,6 +3,8 @@ const productList = document.querySelector(".product-list");
 const openBtn = document.getElementById("cart-btn");
 const closeBtn = document.querySelector("#close-btn");
 const modal = document.getElementById("modal-wrapper");
+const modalList = document.querySelector(".modal-list");
+const totalInfo = document.querySelector("#total");
 document.addEventListener("DOMContentLoaded", () => {
   fetchCategories();
   fetchProducts();
@@ -44,11 +46,21 @@ const fetchProducts = () => {
 };
 //add cart
 
-const cart = [];
+let cart = [];
+let totalPrice = 0;
 
 function listCart() {
-  cart.forEach((item) => {
-    console.log(item);
+  cart.forEach((eleman) => {
+    const cartItem = document.createElement("div");
+    cartItem.classList.add("item");
+    cartItem.innerHTML = `
+    <img src="${eleman.img}">
+    <h2 class="title">${eleman.name}</h2>
+    <h2 class="price">${eleman.price}$</h2>
+    <div class= "amount"><p>${eleman.amount}</p></div>
+    `;
+    modalList.appendChild(cartItem);
+    totalPrice += eleman.price * eleman.amount;
   });
 }
 
@@ -60,8 +72,13 @@ const toggleModal = () => {
 openBtn.addEventListener("click", () => {
   toggleModal();
   listCart();
+  totalInfo.innerText = totalPrice;
 });
-closeBtn.addEventListener("click", toggleModal);
+closeBtn.addEventListener("click", () => {
+  toggleModal();
+  modalList.innerHTML = " ";
+  totalPrice = 0;
+});
 
 function addCart(param) {
   const foundItem = cart.find((eleman) => eleman.id === param.id);

@@ -156,13 +156,25 @@ main {
 .modal {
   background-color: white;
   width: 60vw;
-  height: 60vh;
+  height: 70vh;
   border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  padding: 40px;
+  padding: 20px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+.total-wrapper {
+  text-align: center;
+  padding-top: 30px;
+}
+#total {
+  color: #9303e1;
+  font-weight: bolder;
+}
+
 .modal #close-btn {
   width: 30px;
   position: absolute;
@@ -178,6 +190,12 @@ main {
 
 .modal-list {
   margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow-y: auto;
+  flex-grow: 1;
+  padding: 10px;
 }
 
 .item {
@@ -186,6 +204,7 @@ main {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 10px 20px;
   align-items: center;
+  gap: 30px;
 }
 
 .item .title {
@@ -194,7 +213,8 @@ main {
 .item .price {
   font-size: 15px;
   color: #9f0af0;
-  padding: 10px;
+  padding: 5px;
+  white-space: nowrap;
 }
 
 .item img {
@@ -202,4 +222,16 @@ main {
   height: 60px;
   border-radius: 50px;
   padding: 5px;
+}
+
+.amount {
+  background-color: #8c95a7;
+  border-radius: 50%;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 600;
 }
